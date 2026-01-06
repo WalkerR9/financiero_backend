@@ -6,16 +6,16 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ length: 50 })
+  @Column({ name: 'first_name', length: 50 })
   firstName: string;
 
-  @Column({ length: 50, nullable: true })
+  @Column({ name: 'middle_name', length: 50, nullable: true })
   middleName: string;
 
-  @Column({ length: 50 })
+  @Column({ name: 'last_name', length: 50 })
   lastName: string;
 
-  @Column({ length: 50, nullable: true })
+  @Column({ name: 'seccond_last_name', length: 50, nullable: true })
   secondLastName: string;
 
   @Column({ length: 100, unique: true })
