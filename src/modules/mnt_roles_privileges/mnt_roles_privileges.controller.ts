@@ -1,4 +1,4 @@
 import { Controller } from '@nestjs/common';
 
 @Controller('mnt-roles-privileges')
-export class MntRolesPrivilegesController {}
+export class RolesPrivilegesController {}

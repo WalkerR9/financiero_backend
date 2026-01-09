@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { CtlPrivilegesController } from './ctl_privileges.controller';
+import { PrivilegesController } from './ctl_privileges.controller';
 
-describe('CtlPrivilegesController', () => {
-  let controller: CtlPrivilegesController;
+describe('PrivilegesController', () => {
+  let controller: PrivilegesController;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [CtlPrivilegesController],
+      controllers: [PrivilegesController],
     }).compile();
 
-    controller = module.get<CtlPrivilegesController>(CtlPrivilegesController);
+    controller = module.get<PrivilegesController>(PrivilegesController);
   });
 
   it('should be defined', () => {

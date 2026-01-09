@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
-import { MntRolesPrivilegesController } from './mnt_roles_privileges.controller';
-import { MntRolesPrivilegesService } from './mnt_roles_privileges.service';
-import { Mnt_Roles_Privileges } from './entities/mnt_roles_privileges.entity';
+import { RolesPrivilegesController } from './mnt_roles_privileges.controller';
+import { RolesPrivilegesService } from './mnt_roles_privileges.service';
+import { RolesPrivileges } from './entities/mnt_roles_privileges.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Mnt_Roles_Privileges])],
-  controllers: [MntRolesPrivilegesController],
-  providers: [MntRolesPrivilegesService]
+  imports: [TypeOrmModule.forFeature([RolesPrivileges])],
+  controllers: [RolesPrivilegesController],
+  providers: [RolesPrivilegesService]
 })
-export class MntRolesPrivilegesModule {}
+export class RolesPrivilegesModule {}

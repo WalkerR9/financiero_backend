@@ -1,24 +1,24 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Ctl_Privilege } from './entities/ctl_privilege.entity';
+import { Privilege } from './entities/ctl_privilege.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
 export class PrivilegesService {
     constructor(
-        @InjectRepository(Ctl_Privilege)
-        private privilegeRepository: Repository<Ctl_Privilege>,
+        @InjectRepository(Privilege)
+        private privilegeRepository: Repository<Privilege>,
       ) {}
     
-      findAll(): Promise<Ctl_Privilege[]> {
+      findAll(): Promise<Privilege[]> {
         return this.privilegeRepository.find();
       }
     
-      findOne(id: number): Promise<Ctl_Privilege | null> {
+      findOne(id: number): Promise<Privilege | null> {
         return this.privilegeRepository.findOneBy({ id });
       }
     
-      create(privilege: Ctl_Privilege): Promise<Ctl_Privilege> {
+      create(privilege: Privilege): Promise<Privilege> {
         return this.privilegeRepository.save(privilege);
       }
     

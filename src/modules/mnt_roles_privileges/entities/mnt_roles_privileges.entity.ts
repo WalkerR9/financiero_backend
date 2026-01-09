@@ -1,9 +1,9 @@
-import { Ctl_Privilege } from '../../ctl_privileges/entities/ctl_privilege.entity';
-import { Ctl_Role } from '../../ctl_roles/entities/ctl_roles.entity';
+import { Privilege } from '../../ctl_privileges/entities/ctl_privilege.entity';
+import { Role } from '../../ctl_roles/entities/ctl_roles.entity';
 import { Entity, Column, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn, ManyToOne } from 'typeorm';
 
-@Entity()
-export class Mnt_Roles_Privileges {
+@Entity('mnt_roles_privileges')
+export class RolesPrivileges {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -13,13 +13,13 @@ export class Mnt_Roles_Privileges {
   @UpdateDateColumn({ type: 'timestamp', name: 'updated_at' })
   updatedAt: Date;
 
-  @ManyToOne(() => Ctl_Role, role => role.id, {
+  @ManyToOne(() => Role, role => role.id, {
     onDelete: 'CASCADE',
   })
-  role: Ctl_Role;
+  role: Role;
   
-  @ManyToOne(() => Ctl_Privilege, privilege => privilege.id, {
+  @ManyToOne(() => Privilege, privilege => privilege.id, {
     onDelete: 'CASCADE',
   })
-  privilege: Ctl_Privilege;
+  privilege: Privilege;
 }

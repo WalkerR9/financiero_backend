@@ -1,9 +1,9 @@
-import { Mnt_Roles_Users } from '../../mnt_roles_users/entities/mnt_roles_users.entity';
-import { Mnt_Roles_Privileges } from '../../mnt_roles_privileges/entities/mnt_roles_privileges.entity';
+import { RolesUsers } from '../../mnt_roles_users/entities/mnt_roles_users.entity';
+import { RolesPrivileges } from '../../mnt_roles_privileges/entities/mnt_roles_privileges.entity';
 import { Entity, Column, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn, OneToMany } from 'typeorm';
 
-@Entity()
-export class Ctl_Role {
+@Entity('ctl_roles')
+export class Role {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -19,9 +19,9 @@ export class Ctl_Role {
   @UpdateDateColumn({ type: 'timestamp', name: 'updated_at' })
   updatedAt: Date;
 
-  @OneToMany(() => Mnt_Roles_Privileges, role_privilege => role_privilege.role)
-  role_privileges: Mnt_Roles_Privileges[];
+  @OneToMany(() => RolesPrivileges, role_privilege => role_privilege.role)
+  role_privileges: RolesPrivileges[];
 
-  @OneToMany(() => Mnt_Roles_Users, role_user => role_user.user)
-  role_users: Mnt_Roles_Users[];
+  @OneToMany(() => RolesUsers, role_user => role_user.user)
+  role_users: RolesUsers[];
 }

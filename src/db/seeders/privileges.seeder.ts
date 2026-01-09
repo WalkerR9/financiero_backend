@@ -1,8 +1,8 @@
-import { Ctl_Privilege } from '../../modules/ctl_privileges/entities/ctl_privilege.entity';
+import { Privilege } from '../../modules/ctl_privileges/entities/ctl_privilege.entity';
 import { DataSource } from 'typeorm';
 
 export async function seedPrivileges(dataSource: DataSource) {
-  const repo = dataSource.getRepository(Ctl_Privilege);
+  const repo = dataSource.getRepository(Privilege);
 
   const privileges = [
     { name: 'USER_CREATE', description: 'Crear usuarios' },

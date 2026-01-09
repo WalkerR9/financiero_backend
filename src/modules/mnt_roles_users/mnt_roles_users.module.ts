@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
-import { MntRolesUsersController } from './mnt_roles_users.controller';
-import { MntRolesUsersService } from './mnt_roles_users.service';
+import { RolesUsersController } from './mnt_roles_users.controller';
+import { RolesUsersService } from './mnt_roles_users.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Mnt_Roles_Users } from './entities/mnt_roles_users.entity';
+import { RolesUsers } from './entities/mnt_roles_users.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Mnt_Roles_Users])],
-  controllers: [MntRolesUsersController],
-  providers: [MntRolesUsersService]
+  imports: [TypeOrmModule.forFeature([RolesUsers])],
+  controllers: [RolesUsersController],
+  providers: [RolesUsersService]
 })
-export class MntRolesUsersModule {}
+export class RolesUsersModule {}

@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { MntRolesPrivilegesController } from './mnt_roles_privileges.controller';
+import { RolesPrivilegesController } from './mnt_roles_privileges.controller';
 
-describe('MntRolesPrivilegesController', () => {
-  let controller: MntRolesPrivilegesController;
+describe('RolesPrivilegesController', () => {
+  let controller: RolesPrivilegesController;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [MntRolesPrivilegesController],
+      controllers: [RolesPrivilegesController],
     }).compile();
 
-    controller = module.get<MntRolesPrivilegesController>(MntRolesPrivilegesController);
+    controller = module.get<RolesPrivilegesController>(RolesPrivilegesController);
   });
 
   it('should be defined', () => {

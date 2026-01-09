@@ -1,4 +1,4 @@
 import { Controller } from '@nestjs/common';
 
 @Controller('ctl-roles')
-export class CtlRolesController {}
+export class RolesController {}

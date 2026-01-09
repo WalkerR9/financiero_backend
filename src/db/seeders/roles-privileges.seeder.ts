@@ -1,12 +1,12 @@
 import { DataSource } from 'typeorm';
-import { Ctl_Privilege } from '../../modules/ctl_privileges/entities/ctl_privilege.entity';
-import { Mnt_Roles_Privileges } from '../../modules/mnt_roles_privileges/entities/mnt_roles_privileges.entity';
-import { Ctl_Role } from '../../modules/ctl_roles/entities/ctl_roles.entity';
+import { Privilege } from '../../modules/ctl_privileges/entities/ctl_privilege.entity';
+import { RolesPrivileges } from '../../modules/mnt_roles_privileges/entities/mnt_roles_privileges.entity';
+import { Role } from '../../modules/ctl_roles/entities/ctl_roles.entity';
 
 export async function seedRolesPrivileges(dataSource: DataSource) {
-  const roleRepo = dataSource.getRepository(Ctl_Role);
-  const privRepo = dataSource.getRepository(Ctl_Privilege);
-  const rpRepo = dataSource.getRepository(Mnt_Roles_Privileges);
+  const roleRepo = dataSource.getRepository(Role);
+  const privRepo = dataSource.getRepository(Privilege);
+  const rpRepo = dataSource.getRepository(RolesPrivileges);
 
   const admin = await roleRepo.findOneBy({ name : 'ADMIN' });
   if (!admin) return;

@@ -1,8 +1,8 @@
-import { Ctl_Role } from '../../modules/ctl_roles/entities/ctl_roles.entity';
+import { Role } from '../../modules/ctl_roles/entities/ctl_roles.entity';
 import { DataSource } from 'typeorm';
 
 export async function seedRoles(dataSource: DataSource) {
-  const repo = dataSource.getRepository(Ctl_Role);
+  const repo = dataSource.getRepository(Role);
 
   const roles = [
     { name: 'ADMIN' },

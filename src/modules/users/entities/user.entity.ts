@@ -1,4 +1,4 @@
-import { Mnt_Roles_Users } from '../../mnt_roles_users/entities/mnt_roles_users.entity';
+import { RolesUsers } from '../../mnt_roles_users/entities/mnt_roles_users.entity';
 import { Entity, Column, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn, OneToMany } from 'typeorm';
 
 @Entity('users')
@@ -33,6 +33,6 @@ export class User {
   @UpdateDateColumn({ type: 'timestamp', name: 'updated_at' })
   updatedAt: Date;
 
-  @OneToMany(() => Mnt_Roles_Users, role_user => role_user.user)
-  role_users: Mnt_Roles_Users[];
+  @OneToMany(() => RolesUsers, role_user => role_user.user)
+  role_users: RolesUsers[];
 }
